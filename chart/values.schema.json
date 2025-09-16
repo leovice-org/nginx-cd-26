@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NGINX Web Server Values",
+  "type": "object",
+  "properties": {
+    "replicaCount": {
+      "type": "integer",
+      "default": 1
+    },
+    "image": {
+      "type": "object",
+      "properties": {
+        "repository": {
+          "type": "string",
+          "default": "nginx"
+        },
+        "pullPolicy": {
+          "type": "string",
+          "default": "IfNotPresent"
+        },
+        "tag": {
+          "type": "string",
+          "default": "1.25.0"
+        }
+      }
+    },
+    "service": {
+      "type": "object",
+      "properties": {
+        "type": "string",
+          "default": "ClusterIP"
+        },
+        "port": {
+          "type": "integer",
+          "default": 80
+        }
+      }
+    }
+  }
+}
